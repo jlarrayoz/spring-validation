@@ -22,25 +22,39 @@
 		<h3>Entregar las pizzas a ....</h3>
 
 		<label for="nombrePersona">Nombre: </label>
-		<input type="text" th:field="*{nombrePersona}" /> <br /> 
+		<input type="text" th:field="*{nombrePersona}" />
+		<span class="validationError" th:if="${#fields.hasErrors('nombrePersona')}" th:errors="*{nombrePersona}">Error campo nombre persona</span>
+		<br /> 
 		
 		<label for="direccion">Dirección: </label>
-		<input type="text" th:field="*{direccion}" /> <br />
+		<input type="text" th:field="*{direccion}" />
+		<span class="validationError" th:if="${#fields.hasErrors('direccion')}" th:errors="*{direccion}">Error campo direccion</span>
+		<br />
 		
 		<label for="ciudad">Ciudad: </label>
-		<input type="text" th:field="*{ciudad}" /> <br /> 
+		<input type="text" th:field="*{ciudad}" />
+		<span class="validationError" th:if="${#fields.hasErrors('ciudad')}" th:errors="*{ciudad}">Error campo ciudad</span>
+		<br /> 
 		
 		<label for="barrio">Barrio: </label>
-		<input type="text" th:field="*{barrio}" /> <br />
+		<input type="text" th:field="*{barrio}" />
+		<span class="validationError" th:if="${#fields.hasErrors('barrio')}" th:errors="*{barrio}">Error campo barrio</span>
+		<br />
 		
 		<h3>Info de su pago...</h3>
 		<label for="nroTarjeta">Número de tarjeta: </label>
-		<input type="text" th:field="*{nroTarjeta}" /> <br />
+		<input type="text" th:field="*{nroTarjeta}" />
+		<span class="validationError" th:if="${#fields.hasErrors('nroTarjeta')}" th:errors="*{nroTarjeta}">Error campo nro tarjeta</span>
+		<br />
 		
 		<label for="fecVencimiento">Vencimiento:</label>
-		<input type="text" th:field="*{fecVencimiento}" /> <br />
+		<input type="text" th:field="*{fecVencimiento}" />
+		<span class="validationError" th:if="${#fields.hasErrors('fecVencimiento')}" th:errors="*{fecVencimiento}">Error campo fecha vto</span>
+		<br />
 		<label for="codigoCVV">CVV: </label>
-		<input type="text" th:field="*{codigoCVV}" /> <br /> 
+		<input type="text" th:field="*{codigoCVV}" />
+		<span class="validationError" th:if="${#fields.hasErrors('codigoCVV')}" th:errors="*{codigoCVV}">Error campo codigoCVV</span>
+		<br /> 
 		
 		<input type="submit" value="Confirmar orden" />
 	</form>

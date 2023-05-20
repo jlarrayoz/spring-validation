@@ -5,6 +5,7 @@ import java.util.stream.Collectors;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.Errors;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -16,6 +17,7 @@ import edu.curso.domain.OrdenPizza;
 import edu.curso.domain.Pizza;
 import edu.curso.domain.TipoIngrediente;
 import edu.curso.models.IngredienteDAO;
+import jakarta.validation.Valid;
 import lombok.extern.slf4j.Slf4j;
 
 
@@ -59,9 +61,23 @@ public class DiseniarPizzaController {
 	}
 	
 	
+	/**
+	 * Metodo encargado de procesar una nueva pizza
+	 * Observar como se utiliza bean validation para realizar las validaciones
+	 * @param pizza
+	 * @param errores
+	 * @param ordenPizza
+	 * @return
+	 */
 	@PostMapping
-	public String procesarOrden(Pizza pizza, @ModelAttribute OrdenPizza ordenPizza) {
+	public String procesarOrden(@Valid Pizza pizza, Errors errores, @ModelAttribute OrdenPizza ordenPizza) {
 		log.info("Procesando la pizza: {}", pizza);
+		
+		//Si encuentro errores, vuelvo a la página de diseño de la pizza
+		if (errores.hasErrors()) {
+			log.error("Se encontraror errores al validar: {}", errores.getAllErrors());
+			return "design";
+		}
 		
 		ordenPizza.addPizza(pizza);
 		

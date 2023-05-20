@@ -11,7 +11,7 @@ Le agregamos validación al proyecto spring-pizza
 	
 </ol>
 
-### Agregar dependencias
+## Agregar dependencias
 
 Para poder utilizar bean validations debemos agregar la siguiente dependencia en el pom.xml:
 
@@ -22,4 +22,10 @@ Para poder utilizar bean validations debemos agregar la siguiente dependencia en
 </dependency>
 </code>
 ```
+
+## Varios
+
+Info sobre expresiones regulares:
+
+[https://www.regular-expressions.info/](https://www.regular-expressions.info/)
 

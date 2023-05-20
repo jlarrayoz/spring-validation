@@ -28,7 +28,7 @@ span.validationError {
 	color: red;
 }
 
-label {
+.label {
   display: inline-block;
   width: 130px;
   text-align: left;
