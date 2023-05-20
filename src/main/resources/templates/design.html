@@ -39,8 +39,8 @@
 			<input type="text" th:field="*{nombre}"/>
 			<!--  Validación del campo nombre -->
 			<span class="validationError" th:if="${#fields.hasErrors('nombre')}" th:errors="*{nombre}">Error campo nombre</span>
-			<br />
-			<button>Enviar su orden</button>
+			<br/><br/><br/>
+			<button id="button">Enviar su orden</button>
 		</div>
 	</form>
 </body>
