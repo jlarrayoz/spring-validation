@@ -50,11 +50,19 @@
 
 		<!-- Dependencia para poder utilizar la anotacion @Data y generar
 		getter, setter, equals, hashCode, toString 
-		URL: https://projectlombok.org/ -->
+		URL:
+		https://projectlombok.org/ -->
 		<dependency>
 			<groupId>org.projectlombok</groupId>
 			<artifactId>lombok</artifactId>
 		</dependency>
+
+		<!-- Dependencia para utilizar Bean Validations -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-validation</artifactId>
+		</dependency>
+
 
 	</dependencies>
 
@@ -65,8 +73,10 @@
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
 
-			<!-- Plugin para excluir lombok del build, ya que la magia se hace en tiempo de compilación,
-				 lo que no es necesario tenerlo en runtime (tiempo de ejecución) -->
+			<!-- Plugin para excluir lombok del build, ya que la magia se hace
+			en tiempo de compilación,
+				 lo que no es necesario tenerlo en
+			runtime (tiempo de ejecución) -->
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
